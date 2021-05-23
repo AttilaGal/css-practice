@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Lexend+Deca&display=swap" rel="stylesheet">
+
+
+  <title>Frontend Mentor | 3-column preview card component</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+
+    :root {
+      --card-width: 250px;
+      --card-height: 400px;
+      color: hsla(0, 0%, 100%, 0.75);
+      font-family: 'Lexend Deca';
+    }
+    body {
+      display: grid;
+      justify-content: center;
+    }
+    .card-container {
+      display: grid;
+      grid-template-columns: var(--card-width) var(--card-width) var(--card-width);
+    }
+    @media (max-width: 375px) {
+      .card-container {
+        grid-template-columns: var(--card-width);
+      }
+    }
+
+
+    .card {
+      max-width: var(--card-width);
+      height: var(--card-height);
+      padding-left: 25px;
+      padding-right: 25px;
+      position: relative;
+    }
+
+    .card:first-child {
+      border-radius: 5px 0 0 5px;
+    }
+
+    .card:last-child {
+      border-radius: 0 5px 5px 0;
+    }
+
+    @media (max-width: 375px) {
+      .card:first-child {
+        border-radius: 5px 5px 0 0;
+      }
+
+      .card:last-child {
+        border-radius: 0 0 5px 5px;
+      }
+    }
+
+    .card-icon {
+      margin-top: 30px;
+    }
+
+    .card-title {
+      text-transform: uppercase;
+      font-family: 'Big Shoulders Display';
+      font-weight: 700;
+      font-size: 25px;
+    }
+
+    .card-text {
+      font-family: 'Lexend Deca';
+      font-size: 15px;
+      font-weight: 400;
+    }
+
+    .card-button {
+      border-color: hsl(0, 0%, 95%);
+      border-style: solid;
+      border-width: 2px;
+      font-family: inherit;
+      padding: 13px 30px 13px 30px;
+      border-radius: 40px;
+      position: absolute;
+      bottom: 0;
+      margin-bottom: 60px;
+    }
+
+    .card-button:hover {
+      color: hsl(0, 0%, 95%);
+      background-color: inherit;
+    }
+
+    .bg-yellow {
+      background-color: hsl(31, 77%, 52%);
+    }
+
+    .bg-teal {
+      background-color: hsl(184, 100%, 22%);
+    }
+
+    .bg-green {
+      background-color: hsl(179, 100%, 13%);
+    }
+
+    .txt-yellow {
+      color: hsl(31, 77%, 52%);
+    }
+
+    .txt-teal {
+      color: hsl(184, 100%, 22%);
+    }
+
+    .txt-green {
+      color: hsl(179, 100%, 13%);
+    }
+  </style>
+</head>
+<body>
+  
+  <div class="card-container">
+    <div class="card bg-yellow">
+      <image
+        class="card-icon"
+        src="./images/icon-sedans.svg"
+      />
+      <h1 class="card-title">Sedans<h1>
+      <p class="card-text">
+        Choose a sedan for its affordability and excellent fuel economy. Ideal for cruising in the city 
+        or on your next road trip.
+      </p>
+      <button class="card-button txt-yellow">Learn More</button>
+    </div>
+  
+    <div class="card bg-teal">
+      <image
+        class="card-icon"
+        src="./images/icon-suvs.svg"
+      />
+      <h1 class="card-title">SUVs<h1>
+      <p class="card-text">
+        Take an SUV for its spacious interior, power, and versatility. Perfect for your next family vacation 
+        and off-road adventures.
+      </p>
+      <button class="card-button txt-teal">Learn More</button>
+    </div>
+    
+    <div class="card bg-green">
+      <image
+        class="card-icon"
+        src="./images/icon-luxury.svg"
+      />
+      <h1 class="card-title">Luxury<h1>
+      <p class="card-text">
+        Cruise in the best car brands without the bloated prices. Enjoy the enhanced comfort of a luxury 
+        rental and arrive in style.
+      </p>
+      <button class="card-button txt-green">Learn More</button>
+    </div>
+  </div>
+  
+  
+</body>
+</html>
