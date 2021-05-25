@@ -12,24 +12,69 @@
   <style>
     .attribution { font-size: 11px; text-align: center; }
     .attribution a { color: hsl(228, 45%, 44%); }
+
+    :root {
+      --dark-cyan: hsl(185, 75%, 39%);
+      --dark-blue: hsl(229, 23%, 23%);
+      --gray-blue: hsl(227, 10%, 46%);
+    }
+
+    .profile-card {
+      min-width: 300px;
+      min-height: 500px;
+      border-radius: 20px;
+      /* background-color: red; */
+    }
+
+    .profile-top {
+
+    }
+
+    .profile.middle {
+
+    }
+    
+    .profile-bottom {
+      border-top: 1px solid hsla(227, 10%, 46%, 20%);
+      display: flex;
+      align-content: space-evenly;
+    }
   </style>
 </head>
 <body>
-  Victor Crest
-  26
-  London
+  <div class="profile-card">
 
-  80K
-  Followers
+    <section>
+      <img 
+        src="./images/image-victor.jpg"
+        class="profile-image"
+      />
+    </section>
 
-  803K
-  Likes
+    <h1 class="profile-name">Victor Crest <span class="profile-age">26</span></h1>
+    <p class="profile-location">London</p>
+  
+    <div class="profile-bottom">
+      <div class="stat">
+        <h1>80K</h1>
+        <h2>Followers</h2>
+      </div>
+    
+      <div class="stat">
+        <h1>803K</h1>
+        <h2>Likes</h2>
+      </div>
+    
+      <div class="stat">
+        <h1>1.4K</h1>
+        <h2>Photos</h2>
+      </div>
+    </div>
+  </div>
 
-  1.4K
-  Photos
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+    Coded by <a href="#">Attila Gal</a>.
   </div>
 </body>
 </html>
