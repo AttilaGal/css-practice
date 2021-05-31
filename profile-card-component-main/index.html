@@ -10,6 +10,11 @@
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
     .attribution { font-size: 11px; text-align: center; }
     .attribution a { color: hsl(228, 45%, 44%); }
 
@@ -17,44 +22,85 @@
       --dark-cyan: hsl(185, 75%, 39%);
       --dark-blue: hsl(229, 23%, 23%);
       --gray-blue: hsl(227, 10%, 46%);
+      --card-width: 350px;
+      --card-height: 500px;
     }
 
     .profile-card {
-      min-width: 300px;
-      min-height: 500px;
+      min-width: var(--card-width);
+      max-width: var(--card-width);
+      min-height: var(--card-height);
       border-radius: 20px;
+      display: flex;
+      justify-content: center;
+      flex-flow: column
       /* background-color: red; */
     }
+    
 
     .profile-top {
-
+      min-height: 40%;
+      min-width: var(--card-width);
+      max-width: var(--card-width);
+      min-height: calc(var(--card-height) * 0.3);
+      max-height: calc(var(--card-height) * 0.3);
+      /* max-height: 40%; */
+      background-color: green;
     }
 
-    .profile.middle {
-
+    .profile-middle {
+      min-width: var(--card-width);
+      max-width: var(--card-width);
+      min-height: calc(var(--card-height) * 0.45);
+      max-height: calc(var(--card-height) * 0.45);
+      background-color: blue;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-flow: column;
     }
     
     .profile-bottom {
+      min-width: var(--card-width);
+      max-width: var(--card-width);
+      min-height: calc(var(--card-height) * 0.25);
+      max-height: calc(var(--card-height) * 0.25);
+      background-color: yellow;
       border-top: 1px solid hsla(227, 10%, 46%, 20%);
       display: flex;
-      align-content: space-evenly;
+      justify-content: space-around;
+    }
+
+    .profile-image {
+      border: 25px;
+    }
+    
+
+    .stat {
+      min-width: calc(var(--card-width) * 0.33);
+      max-width: calc(var(--card-width) * 0.33);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
     }
   </style>
 </head>
 <body>
   <div class="profile-card">
-
-    <section>
+    <section class="profile-top">
       <img 
         src="./images/image-victor.jpg"
         class="profile-image"
       />
     </section>
 
-    <h1 class="profile-name">Victor Crest <span class="profile-age">26</span></h1>
-    <p class="profile-location">London</p>
+    <section class="profile-middle">
+      <h1 class="profile-name">Victor Crest <span class="profile-age">26</span></h1>
+      <p class="profile-location">London</p>
+    </section>
   
-    <div class="profile-bottom">
+    <section class="profile-bottom">
       <div class="stat">
         <h1>80K</h1>
         <h2>Followers</h2>
@@ -69,7 +115,7 @@
         <h1>1.4K</h1>
         <h2>Photos</h2>
       </div>
-    </div>
+    </section>
   </div>
 
   <div class="attribution">
