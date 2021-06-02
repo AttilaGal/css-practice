@@ -5,7 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap" rel="stylesheet">
   <title>Frontend Mentor | Profile card component</title>
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
@@ -24,17 +25,46 @@
       --gray-blue: hsl(227, 10%, 46%);
       --card-width: 350px;
       --card-height: 500px;
+      font-family: 'Kumbh Sans';
+    }
+
+    body {
+      background-color: var(--dark-cyan); 
+    }
+    .pattern-top {
+      position: fixed;
+      top: -100%;
+      right: 20%;
+      z-index: 1;
+    }
+
+    .pattern-bottom {
+      position: fixed;
+      top: 45%;
+      left: 45%;
+      overflow: hidden;
+      height: 100%;
+    }
+    .content-container {
+      display: flex;
+      height: 100vh;
+      align-items: center;
+      justify-content: center;
+      flex-flow: column;
     }
 
     .profile-card {
       min-width: var(--card-width);
       max-width: var(--card-width);
       min-height: var(--card-height);
+      box-shadow: -10px 10px 20px 6px hsla(229, 23%, 23%, .2);
+      background-color: white;
       border-radius: 20px;
       display: flex;
       justify-content: center;
-      flex-flow: column
-      /* background-color: red; */
+      flex-flow: column;
+      margin-bottom: 15px;
+      z-index: 2;
     }
     
 
@@ -44,10 +74,11 @@
       max-width: var(--card-width);
       min-height: calc(var(--card-height) * 0.3);
       max-height: calc(var(--card-height) * 0.3);
-      background-color: green;
       display: flex;
       align-items: center;
       justify-content: center;
+      background-image: url('images/bg-pattern-card.svg');
+      border-radius: 20px 20px 0 0;
     }
 
     .profile-middle {
@@ -55,11 +86,22 @@
       max-width: var(--card-width);
       min-height: calc(var(--card-height) * 0.45);
       max-height: calc(var(--card-height) * 0.45);
-      background-color: blue;
       display: flex;
       justify-content: center;
       align-items: center;
       flex-flow: column;
+    }
+
+    .profile-age {
+      margin-left: 10px;
+      font-weight: 400;
+      color: var(--gray-blue);
+    }
+
+    .profile-location {
+      margin-top: 10px;
+      font-weight: 400;
+      color: var(--gray-blue);
     }
     
     .profile-bottom {
@@ -67,7 +109,6 @@
       max-width: var(--card-width);
       min-height: calc(var(--card-height) * 0.25);
       max-height: calc(var(--card-height) * 0.25);
-      background-color: yellow;
       border-top: 1px solid hsla(227, 10%, 46%, 20%);
       display: flex;
       justify-content: space-around;
@@ -82,7 +123,6 @@
       z-index: 2;
     }
     
-
     .stat {
       min-width: calc(var(--card-width) * 0.33);
       max-width: calc(var(--card-width) * 0.33);
@@ -91,44 +131,59 @@
       justify-content: center;
       align-items: center;
     }
-  
+    
+    .stat-number {
+      font-size: 1.4rem;
+    }
+
+    .stat-text {
+      font-size: 0.9rem;
+      margin-top: 10px;
+      font-weight: 400;
+      color: var(--gray-blue);
+    }
+
   </style>
 </head>
 <body>
-  <div class="profile-card">
-    <section class="profile-top">
-      <img 
-        src="./images/image-victor.jpg"
-        class="profile-image"
-      />
-    </section>
-
-    <section class="profile-middle">
-      <h1 class="profile-name">Victor Crest <span class="profile-age">26</span></h1>
-      <p class="profile-location">London</p>
-    </section>
+  <img src="./images/bg-pattern-top.svg" alt="" class="pattern-top">
+  <div class="content-container">
+    <div class="profile-card">
+      <section class="profile-top">
+        <img 
+          src="./images/image-victor.jpg"
+          class="profile-image"
+        />
+      </section>
   
-    <section class="profile-bottom">
-      <div class="stat">
-        <h1>80K</h1>
-        <h2>Followers</h2>
-      </div>
+      <section class="profile-middle">
+        <h1 class="profile-name">Victor Crest <span class="profile-age">26</span></h1>
+        <p class="profile-location">London</p>
+      </section>
     
-      <div class="stat">
-        <h1>803K</h1>
-        <h2>Likes</h2>
-      </div>
-    
-      <div class="stat">
-        <h1>1.4K</h1>
-        <h2>Photos</h2>
-      </div>
-    </section>
+      <section class="profile-bottom">
+        <div class="stat">
+          <h1 class="stat-number">80K</h1>
+          <h2 class="stat-text">Followers</h2>
+        </div>
+      
+        <div class="stat">
+          <h1 class="stat-number">803K</h1>
+          <h2 class="stat-text">Likes</h2>
+        </div>
+      
+        <div class="stat">
+          <h1 class="stat-number">1.4K</h1>
+          <h2 class="stat-text">Photos</h2>
+        </div>
+      </section>
+    </div>
   </div>
-
+  
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Attila Gal</a>.
   </div>
+  <img src="./images/bg-pattern-bottom.svg" alt="" class="pattern-bottom">
 </body>
 </html>
