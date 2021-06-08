@@ -5,25 +5,42 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Lexend+Deca&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
   <title>Frontend Mentor | Stats preview card component</title>
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
     .attribution { font-size: 11px; text-align: center; }
     .attribution a { color: hsl(228, 45%, 44%); }
+
+    /* body {
+      background-color: yellow;
+    } */
   </style>
 </head>
 <body>
 
-  Get insights that help your business grow.
+  <div class="card">
+    <section class="card__info">
 
-  Discover the benefits of data analytics and make better decisions regarding revenue, customer 
-  experience, and overall efficiency.
-
-  10k+ companies
-  314 templates
-  12m+ queries
+      <h1 class="card__info__title">Get <span class="card__info__title--highlight">insights</span> that help your business grow.</h1>
+      <p class="card__info__text">
+        Discover the benefits of data analytics and make better decisions regarding revenue, customer 
+        experience, and overall efficiency.
+      </p>
+    
+      <div class="card__info__stats">
+        <div class="card__info__stat">10k+<span>companies</span></div>
+        <div class="card__info__stat">314<span>templates</span></div>
+        <div class="card__info__stat">12m+<span>queries</span></div>          
+      </div>
+    </section>
+    <section class="card__image">
+      <img src="./images/image-header-desktop.jpg" alt="workers at desk" class="card__image__img">
+    </section>
+  </div>
 
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
