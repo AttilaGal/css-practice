@@ -70,8 +70,13 @@ body {
 }
 
 .card__image {
-  max-width: 40%
+  max-width: 40%;
+  filter: hue-rotate(277) saturate(64) brightness(0.61);
 }
+
+.card__image__img {
+}
+
 /* - Family: [Inter](https://fonts.google.com/specimen/Inter)
 - Weights: 400, 700
 
